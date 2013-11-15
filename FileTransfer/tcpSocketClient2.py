@@ -1,12 +1,12 @@
 import socket
-#import time
 import struct
 import os
+HOST = '10.42.0.1'
+PORT = 50007
 sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 sock.settimeout(1)
-#e=
 try:
-    e=sock.connect(('127.0.0.1',8887))
+    e=sock.connect((HOST,PORT))
     print 'connect...'
 except socket.timeout,e:
     print 'timeout',e
@@ -27,4 +27,4 @@ if not e:
                 break
             sock.send(filedata)
         print "sending over..."
-        fp.close()
+    fp.close()

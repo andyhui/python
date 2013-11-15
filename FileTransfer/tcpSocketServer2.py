@@ -2,6 +2,8 @@ import socket
 import threading
 #import time
 import struct
+HOST = ''
+PORT = 50007
 def function(newsock, address):
     FILEINFO_SIZE = struct.calcsize('128sI')
     while 1:
@@ -36,7 +38,7 @@ def function(newsock, address):
             newsock.close()
             break
 sock=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.bind(('127.0.0.1',8887))
+sock.bind((HOST,PORT))
 sock.listen(5)
 while True:
     newsock, address = sock.accept()
