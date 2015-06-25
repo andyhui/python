@@ -50,6 +50,7 @@ import sys
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 def main():
+  print 'hello word'
   if len(sys.argv) != 3:
     print 'usage: ./wordcount.py {--count | --topcount} file'
     sys.exit(1)
